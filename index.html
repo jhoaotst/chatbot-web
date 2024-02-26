@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Tester</title>
+    <title>CHATBOT</title>
     <link rel="stylesheet" href="./styles.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 <body>
-    <div class="container">
-        <h1>API Tester</h1>
+    <div class="containerrr">
+        <h1> CHATBOT</h1>
         <label for="waId">WhatsApp ID:</label>
-        <input type="text" id="waId" placeholder="Enter WhatsApp ID"><br>
+        <input type="text" id="waId" placeholder="Enter WhatsApp ID" maxlength="11"><button class="addNumber" onclick="addNumber()">+</button><br>
+        
+        <div id="numbers">
+            
+        </div>
 
         <label for="moduleNumber">Module Number:</label>
         <input type="number" id="moduleNumber" placeholder="Enter Module Number"><br>
@@ -18,7 +23,7 @@
         <label for="dayNumber">Day Number:</label>
         <input type="number" id="dayNumber" placeholder="Enter Day Number"><br>
 
-        <button onclick="callAPI()">Send Request</button>
+        <button onclick="callAPI()" class="send-button">Send </button>
 
         <div id="response"></div>
     </div>

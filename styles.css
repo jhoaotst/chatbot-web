@@ -9,12 +9,24 @@ body {
     height: 100vh;
 }
 
-.container {
+.containerrr {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.addNumber {
+    padding: 6px 15px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #4caf50;
+    cursor: pointer;
+}
+.addNumber:hover {
+    background-color: #45a049;
 }
 
 label {
@@ -28,9 +40,10 @@ input {
     margin-top: 5px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    outline: none;
 }
 
-button {
+.send-button {
     background-color: #4caf50;
     color: white;
     padding: 10px 20px;
@@ -39,10 +52,26 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.send-button:hover {
     background-color: #45a049;
 }
 
 #response {
     margin-top: 20px;
+}
+
+.delete-button {
+    margin-left: 10px;
+    padding: 8px 5px;
+    background: red;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+.delete-button:hover {
+    background: rgb(198, 30, 30);
 }

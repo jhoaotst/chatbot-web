@@ -1,10 +1,44 @@
-async function callAPI() {
+let waIds = [];
+
+function addNumber() {
     const waId = document.getElementById('waId').value;
+    if (!/^\d{11}$/.test(waId)) return;
+    if (waId == "") return;
+
+    waIds.push(waId);
+    
+    const numbers = document.getElementById('numbers');
+    const number = document.createElement('p');
+    number.textContent = waId;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Eliminar';
+    deleteButton.classList.add('delete-button');
+    deleteButton.addEventListener('click', function() {
+        const index = waIds.indexOf(waId);
+        if (index !== -1) {
+            waIds.splice(index, 1);
+            numbers.removeChild(number);
+        }
+    });
+
+    number.appendChild(deleteButton);
+    numbers.appendChild(number);
+
+    document.getElementById('waId').value = "";
+
+}
+async function callAPI() {
     const moduleNumber = document.getElementById('moduleNumber').value;
     const dayNumber = document.getElementById('dayNumber').value;
 
+    if (waIds.length === 0) {
+        document.getElementById('response').innerHTML = 'empty numbers';
+        return;
+    }
+
     const requestBody = {
-        waId: waId,
+        waIds: waIds,
         module_number: moduleNumber,
         day_number: dayNumber
     };
