@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tester</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>API Tester</h1>
+        <label for="waId">WhatsApp ID:</label>
+        <input type="text" id="waId" placeholder="51963965509"><br>
+
+        <label for="moduleNumber">Module Number:</label>
+        <input type="number" id="moduleNumber" placeholder="1"><br>
+
+        <label for="dayNumber">Day Number:</label>
+        <input type="number" id="dayNumber" placeholder="0"><br>
+
+        <button onclick="callAPI()">Send Request</button>
+
+        <div id="response"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
