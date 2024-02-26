@@ -9,10 +9,11 @@ function addNumber() {
     
     const numbers = document.getElementById('numbers');
     const number = document.createElement('p');
+    number.classList.add('number');
     number.textContent = waId;
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Eliminar';
+    deleteButton.textContent = '-';
     deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('click', function() {
         const index = waIds.indexOf(waId);

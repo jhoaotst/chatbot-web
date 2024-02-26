@@ -12,12 +12,16 @@ body {
 .container {
     background-color: #fff;
     padding: 20px 50px;
+    padding-right: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .addNumber {
+    display: inline;
     padding: 6px 15px;
     border: none;
     border-radius: 4px;
@@ -35,34 +39,51 @@ label {
 }
 
 input {
-    width: 100%;
     padding: 8px;
+    width: 200px;
     margin-top: 5px;
     margin-bottom: 10px;
     box-sizing: border-box;
     outline: none;
+    margin: 0 auto;
 }
 
 .send-button {
+    width: 200px;
     background-color: #4caf50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .send-button:hover {
     background-color: #45a049;
+}
+#numbers {
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    flex-wrap: wrap;
+    gap: 2px;
+
 }
 
 #response {
     margin-top: 20px;
 }
 
+.number {
+    font-size: 13px;
+}
+
 .delete-button {
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
     margin-left: 10px;
-    padding: 8px 5px;
     background: red;
     border: none;
     border-radius: 4px;
@@ -71,6 +92,7 @@ input {
     transition: all;
     animation-duration: 2s;
     animation-delay: 1s;
+    font-size: 20px;
 }
 .delete-button:hover {
     background: rgb(198, 30, 30);

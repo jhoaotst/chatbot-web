@@ -9,9 +9,12 @@
 </head>
 <body>
     <div class="container">
-        <h1> CHATBOT</h1>
+        <h1 style="margin-right: 25px;"> CHATBOT</h1>
         <label for="waId">WhatsApp ID:</label>
-        <input type="text" id="waId" placeholder="Enter WhatsApp ID" maxlength="11"><button class="addNumber" onclick="addNumber()">+</button><br>
+        <div>
+            <input type="text" id="waId" placeholder="Enter WhatsApp ID" maxlength="11">
+            <button class="addNumber" onclick="addNumber()">+</button>
+        </div>
         
         <div id="numbers">
             
@@ -20,7 +23,7 @@
         <label for="moduleNumber">Module Number:</label>
         <input type="number" id="moduleNumber" placeholder="Enter Module Number"><br>
 
-        <label for="dayNumber">Day Number:</label>
+        <label style="margin-top: -11px" for="dayNumber">Day Number:</label>
         <input type="number" id="dayNumber" placeholder="Enter Day Number"><br>
 
         <button onclick="callAPI()" class="send-button">Send </button>
