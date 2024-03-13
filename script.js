@@ -27,8 +27,8 @@ function addNumber() {
     numbers.appendChild(number);
 
     document.getElementById('waId').value = "";
-
 }
+
 async function callAPI() {
     const moduleNumber = document.getElementById('moduleNumber').value;
     const dayNumber = document.getElementById('dayNumber').value;
@@ -39,9 +39,9 @@ async function callAPI() {
     }
 
     const requestBody = {
-        waIds: waIds,
-        module_number: moduleNumber,
-        day_number: dayNumber
+        waIds: waIds.map(id => id.trim()), // Trim whitespace from each ID
+        module_number: parseInt(moduleNumber), // Convert to integer
+        day_number: parseInt(dayNumber) // Convert to integer
     };
 
     try {
@@ -54,11 +54,16 @@ async function callAPI() {
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Something went wrong');
+            throw new Error('Something went wrong');
         }
 
-        document.getElementById('response').innerHTML = 'Message sent successfully';
+        const responseData = await response.json();
+
+        if (responseData.status) {
+            document.getElementById('response').innerHTML = 'Message sent successfully';
+        } else {
+            document.getElementById('response').innerHTML = 'Failed to send message';
+        }
     } catch (error) {
         console.error('Error:', error);
         document.getElementById('response').innerHTML = 'Error occurred. Check console for details.';
