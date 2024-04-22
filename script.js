@@ -45,7 +45,7 @@ async function callAPI() {
     };
 
     try {
-        const response = await fetch('https://bi-chatbot.whiz.pe/api/cronjob', {
+        const response = await fetch('https://bi-chatbot-devclient.whiz.pe/api/cronjob', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
